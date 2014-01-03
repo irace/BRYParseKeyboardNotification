@@ -13,7 +13,7 @@ Via [CocoaPods](http://cocoapods.org), of course:
 ```objective-c
 - (void)keyboardWillShow:(NSNotification *)notification {
     BRYParseKeyboardNotification(notification, ^(NSTimeInterval keyboardAnimationDuration, CGFloat keyboardHeight, UIViewAnimationOptions keyboardAnimationOptions) {
-        [UIView animateWithDuration:duration delay:0 options:options animations:^{
+        [UIView animateWithDuration:keyboardAnimationDuration delay:0 options:keyboardAnimationOptions animations:^{
             someView.frameHeight -= keyboardHeight;
         }];
     });
