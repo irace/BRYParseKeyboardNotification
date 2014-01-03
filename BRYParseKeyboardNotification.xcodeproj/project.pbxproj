@@ -44,11 +44,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		939C33B81876374B00E934B8 = {
+		932700D4187705EB00E38FD6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				939C33EA18763BAF00E934B8 /* BRYParseKeyboardNotification.h */,
 				939C33EB18763BAF00E934B8 /* BRYParseKeyboardNotification.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		939C33B81876374B00E934B8 = {
+			isa = PBXGroup;
+			children = (
+				932700D4187705EB00E38FD6 /* Classes */,
 				939C33C31876374B00E934B8 /* Frameworks */,
 				939C33C21876374B00E934B8 /* Products */,
 			);
@@ -241,6 +249,7 @@
 				939C33E61876374B00E934B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
