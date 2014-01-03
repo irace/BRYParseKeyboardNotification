@@ -8,7 +8,7 @@
 
 #import "BRYParseKeyboardNotification.h"
 
-void BRYParseKeyboardNotification(NSNotification *notification, void(^callback)(NSTimeInterval duration, CGFloat height, UIViewAnimationOptions options)) {
+void BRYParseKeyboardNotification(NSNotification *notification, void(^callback)(NSTimeInterval keyboardAnimationDuration, CGFloat keyboardHeight, UIViewAnimationOptions keyboardAnimationOptions)) {
     NSDictionary *userInfo = [notification userInfo];
 
     NSTimeInterval duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];

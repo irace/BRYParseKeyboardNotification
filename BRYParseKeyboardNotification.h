@@ -9,4 +9,4 @@
 @import Foundation;
 @import UIKit;
 
-void BRYParseKeyboardNotification(NSNotification *notification, void(^callback)(NSTimeInterval duration, CGFloat height, UIViewAnimationOptions options));
+void BRYParseKeyboardNotification(NSNotification *notification, void(^callback)(NSTimeInterval keyboardAnimationDuration, CGFloat keyboardHeight, UIViewAnimationOptions keyboardAnimationOptions));
