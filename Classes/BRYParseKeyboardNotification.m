@@ -13,7 +13,7 @@ void BRYParseKeyboardNotification(NSNotification *notification, void(^callback)(
 
     NSTimeInterval duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
-    // Conver animation curve to animation options: https://devforums.apple.com/message/878410#878410
+    // Convert animation curve to animation options: https://devforums.apple.com/message/878410#878410
     UIViewAnimationOptions options = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue] << 16;
     
     CGRect keyboardEndFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
