@@ -8,6 +8,10 @@
 
 #import "BRYParseKeyboardNotification.h"
 
+static inline BOOL versionIsLessThan(NSString *version) {
+   return [[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedAscending;
+}
+
 void BRYParseKeyboardNotification(NSNotification *notification, void(^callback)(NSTimeInterval keyboardAnimationDuration, CGFloat keyboardHeight, UIViewAnimationOptions keyboardAnimationOptions)) {
     NSDictionary *userInfo = [notification userInfo];
 
@@ -20,10 +24,12 @@ void BRYParseKeyboardNotification(NSNotification *notification, void(^callback)(
     
     CGFloat height = CGRectGetHeight(keyboardEndFrame);
 
-    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
-        height = CGRectGetWidth(keyboardEndFrame);
+    if (versionIsLessThan(@"8.0")) {
+        if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+            height = CGRectGetWidth(keyboardEndFrame);
+        }
     }
-    
+
     if (callback) {
         callback(duration, height, options);
     }
